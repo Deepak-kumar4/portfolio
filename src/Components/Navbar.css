@@ -1,71 +1,99 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  padding: 16px 30px;
-  margin-bottom: 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 14px 36px;
+  background-color: rgba(17, 17, 17, 0.8);
+  color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.glass-effect {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-brand a {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.navbar-brand a:hover {
-  color: #ffeb3b;
+.logo-text:hover {
+  color: #00d4ff;
+  letter-spacing: 1px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: white;
 }
 
 .navbar-links {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
-.navbar-links button {
-  background: transparent;
-  border: 2px solid white;
-  border-radius: 25px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.navbar-links button a {
+.navbar-links a {
   text-decoration: none;
-  color: white;
-  font-size: 16px;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
   font-weight: 500;
 }
 
-.navbar-links button:hover {
-  background-color: white;
+.navbar-links a:hover,
+.navbar-links a.active {
+  background: linear-gradient(135deg, #00d4ff, #3a47d5);
+  color: white;
   transform: scale(1.05);
 }
 
-.navbar-links button:hover a {
-  color: #764ba2;
-}
-
-/* Optional: Responsive for small screens */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
+/* ======= Responsive (Mobile) ======= */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
 
   .navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+    transition: all 0.3s ease;
   }
 
-  .navbar-links button {
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links a {
+    padding: 12px 0;
     width: 100%;
+    text-align: center;
+    font-size: 18px;
   }
 }
+
+
