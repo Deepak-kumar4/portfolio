@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "./Contact.css";
 import githubIcon from "../assets/github-logo.png";
 import linkedinIcon from "../assets/linkedin-icon.svg";
+import leetcodeIcon from "../assets/leetcode-icon.svg"
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -110,6 +111,20 @@ export default function Contact() {
         >
           <img src={linkedinIcon} alt="LinkedIn" className="social-icon" />
         </motion.a>
+
+        <motion.a
+          href="https://leetcode.com/u/Deepak-Kmr/"
+          target="_blank"
+          rel="noreferrer"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+        >
+          <img src={leetcodeIcon} alt="Leetcode" className="social-icon" />
+        </motion.a>
+        
       </motion.div>
     </motion.section>
   );
