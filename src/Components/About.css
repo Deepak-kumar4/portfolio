@@ -1,0 +1,173 @@
+/* === Base Section === */
+.about-container {
+  font-family: 'Poppins', sans-serif; /* ✅ Font updated */
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #1f1c2c, #928dab);
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* === Section Titles === */
+.section-title {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #00d4ff; /* ✅ Cyan color for "About Me" */
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #d1d5db;
+  margin-bottom: 50px;
+  font-style: italic;
+}
+
+/* === Flex Layout === */
+.about-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* === Profile Image === */
+.about-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+}
+
+.about-image {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.4);
+}
+
+/* === Text Side === */
+.about-info {
+  flex: 2;
+  min-width: 300px;
+  color: #f9fafb;
+}
+
+.about-info h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #a5f3fc; /* ✅ Light teal for "Deepak Kumar" */
+}
+
+.nationality {
+  font-style: italic;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+}
+
+.bio {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #e5e7eb;
+}
+
+.details p {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #e0e7ff;
+}
+
+/* === Skills Section === */
+.about-skills h4 {
+  margin: 20px 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #38bdf8; /* ✅ Sky blue for "My Skills" */
+}
+
+.about-skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-skills li {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  transition: background 0.3s ease;
+}
+
+.about-skills li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* === Contact Button === */
+.btn.primary {
+  margin-top: 30px;
+  display: inline-block;
+  background: #ffffff;
+  color: #1f1c2c;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn.primary:hover {
+  background: #e0e7ff;
+  color: #1e40af;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .about-flex {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-info {
+    text-align: center;
+  }
+
+  .about-image-wrapper {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .about-skills ul {
+    justify-content: center;
+  }
+}
+
+
+
+
+
