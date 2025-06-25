@@ -3,6 +3,7 @@ import { ReactTyped } from "react-typed";
 import coderImg from "../assets/coder.png";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import Snowfall from "react-snowfall"; // ⬅️ Add this
 
 export default function Home() {
   return (
@@ -14,7 +15,24 @@ export default function Home() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
+      {/* Snowfall Effect */}
+      <Snowfall
+        color="#cceeff"
+        snowflakeCount={100}
+        radius={[2, 5]}
+        speed={[1, 2]}
+        wind={[-1, 1]}
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          zIndex: 0,
+        }}
+      />
+
+      {/* Main Content Wrapper */}
       <div className="home-content-wrapper">
+        {/* Left Side Content */}
         <motion.div
           className="home-left"
           initial={{ x: -60, opacity: 0 }}
@@ -26,7 +44,7 @@ export default function Home() {
           <h1 className="name">Deepak Kumar</h1>
           <h2 className="role">
             <ReactTyped
-              strings={["Software Engineer", "React Enthusiast","Problem Solver"]}
+              strings={["Software Engineer", "React Enthusiast", "Problem Solver"]}
               typeSpeed={60}
               backSpeed={40}
               loop
@@ -58,6 +76,7 @@ export default function Home() {
           </div>
         </motion.div>
 
+        {/* Right Side Image */}
         <motion.div
           className="home-right"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -71,6 +90,7 @@ export default function Home() {
     </motion.section>
   );
 }
+
 
 
 
