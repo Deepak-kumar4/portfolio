@@ -1,21 +1,45 @@
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Contact.css";
 import githubIcon from "../assets/github-logo.png";
 import linkedinIcon from "../assets/linkedin-icon.svg";
-import leetcodeIcon from "../assets/leetcode-icon.svg"
+import leetcodeIcon from "../assets/leetcode-icon.svg";
 
 export default function Contact() {
+  const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    alert("Message sent! (Functionality can be extended with EmailJS or backend)");
-    setForm({ name: "", email: "", message: "" });
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          toast.success("🎉 Message Sent!", { position: "bottom-right" });
+          setForm({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          toast.error("❌ Failed to send. Try again.", {
+            position: "bottom-right",
+          });
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -27,6 +51,8 @@ export default function Contact() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
+      <ToastContainer />
+
       <motion.h2
         className="section-title"
         initial={{ y: -20, opacity: 0 }}
@@ -47,7 +73,8 @@ export default function Contact() {
 
       <motion.form
         className="contact-form"
-        onSubmit={handleSubmit}
+        ref={formRef}
+        onSubmit={sendEmail}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
@@ -86,6 +113,7 @@ export default function Contact() {
         transition={{ staggerChildren: 0.2 }}
       >
         <p>Connect with me:</p>
+
         <motion.a
           href="https://github.com/Deepak-kumar4"
           target="_blank"
@@ -120,14 +148,11 @@ export default function Contact() {
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.7 }}
         >
           <img src={leetcodeIcon} alt="Leetcode" className="social-icon" />
         </motion.a>
-        
       </motion.div>
     </motion.section>
   );
 }
-
-
