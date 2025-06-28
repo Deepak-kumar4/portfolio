@@ -13,6 +13,17 @@ const projects = [
       code: "https://github.com/yourusername/buzzbox",
     },
   },
+   {
+    title: "Movie-Search",
+    type: "Seach movie like Netflix",
+    description:
+      "Discover movies, filter by genre or year, scroll for more, and save your ratings with smooth animations and responsive design.",
+    tech: ["Next.js", "TypeScript", "Redux", "Tailwind", "Framer-Motion","ShadeCN UI"],
+    links: {
+      demo: "https://movie-search-gray-xi.vercel.app/movies",
+      code: "https://github.com/Deepak-kumar4/Movie-Search",
+    },
+  },
   {
     title: "NewsNex",
     type: "News Application",
