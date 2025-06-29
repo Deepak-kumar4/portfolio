@@ -65,7 +65,6 @@ export default function Footer() {
           <h3>Contact</h3>
           <p>Email: deepakobc933@gmail.com</p>
           <p>Phone: +918083836118</p>
-          <p>Location: Gaya, Bihar, India</p>
         </motion.div>
 
         {/* Social */}
