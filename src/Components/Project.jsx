@@ -28,8 +28,8 @@ const projects = [
     title: "NewsNex",
     type: "News Application",
     description:
-      "A sleek, category-based news app using NewsAPI. Includes infinite scroll and responsive UI for mobile and desktop.",
-    tech: ["React", "NewsAPI", "Axios", "CSS"],
+      "A sleek, category-based news app using NewsData.io. Includes responsive UI for mobile and desktop.",
+    tech: ["React", "NewsData.io", "API integration", "Tailwind"],
     links: {
       demo: "https://newsnexdpk.netlify.app/",
       code: "https://github.com/Deepak-kumar4/NewsNex",
