@@ -32,7 +32,7 @@ const projects = [
     tech: ["React", "NewsAPI", "Axios", "CSS"],
     links: {
       demo: "https://newsnexdpk.netlify.app/",
-      code: "https://github.com/yourusername/newsnex",
+      code: "https://github.com/Deepak-kumar4/NewsNex",
     },
   },
 ];
