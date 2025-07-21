@@ -35,6 +35,18 @@ const projects = [
       code: "https://github.com/Deepak-kumar4/NewsNex",
     },
   },
+  {
+  title: "JSON Schema Builder",
+  type: "Web Application",
+  description:
+    "An interactive JSON Schema Builder built with React, allowing users to create nested JSON objects with live preview. It features dynamic field editing, type selection, and real-time schema visualization. Built with TailwindCSS and ShadCN components.",
+  tech: ["React", "Tailwind CSS", "React Hook Form", "Netlify"],
+  links: {
+    demo: "https://hronedeepak.netlify.app/", // replace with your real Netlify link
+    code: "https://github.com/Deepak-kumar4/HRoneFrontend", // replace if repo name differs
+  },
+}
+
 ];
 
 export default function Projects() {
